@@ -21,13 +21,13 @@ function App() {
 		<>
 			<Switch>
 				<Route exact path='/'>
-					<Header />
+					<Header type={'main'} />
 					<Visual />
 					<Content></Content>
 				</Route>
 
 				<Route path='/'>
-					<Header />
+					<Header type={'sub'} />
 				</Route>
 			</Switch>
 

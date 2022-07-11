@@ -1,0 +1,126 @@
+footer {
+	width: 100%;
+
+	.inner {
+		width: 1180px;
+		margin: 0 auto;
+		padding: 50px 0px;
+
+		h2 {
+			font: 30px/1 'arial';
+			color: #aaa;
+			margin-bottom: 30px;
+		}
+		#upFooter {
+			width: 100%;
+			display: flex;
+			justify-content: space-between;
+			flex-wrap: wrap;
+			align-content: center;
+
+			&::after {
+				content: '';
+				display: block;
+				width: 100%;
+				height: 1px;
+				background: #aaa;
+				margin: 50px 0px 30px;
+			}
+			> ul {
+				&::after {
+					content: '';
+					display: block;
+					clear: both;
+				}
+
+				li {
+					float: left;
+					margin-right: 20px;
+
+					a {
+						display: block;
+						height: 56px;
+						font-size: 20px;
+						line-height: 56px;
+						color: #aaa;
+					}
+				}
+			}
+			.subscribe {
+				p {
+					font: 16px/1 'arial';
+					color: #999;
+					margin-bottom: 10px;
+				}
+				input {
+					height: 30px;
+					border-radius: 5px;
+					padding-left: 5px;
+					margin-right: 10px;
+				}
+				button {
+					width: 80px;
+					height: 30px;
+					border-radius: 5px;
+					background: #fff;
+					color: #111;
+					border: none;
+					cursor: pointer;
+					transition: 0.5s;
+
+					&:hover {
+						background: #111;
+						color: #fff;
+					}
+				}
+			}
+		}
+		#downFooter {
+			width: 100%;
+			display: flex;
+			justify-content: space-between;
+			align-content: center;
+
+			> ul {
+				&::after {
+					content: '';
+					display: block;
+					clear: both;
+				}
+
+				li {
+					float: left;
+					margin-right: 20px;
+
+					a {
+						display: block;
+						width: 100%;
+						height: 10px;
+						font: 14px/1 'arial';
+						color: #aaa;
+
+						&::after {
+							content: '';
+							display: inline-block;
+							width: 1px;
+							height: 100%;
+							background: #777;
+							margin-left: 15px;
+						}
+					}
+					&:last-of-type {
+						a {
+							&::after {
+								display: none;
+							}
+						}
+					}
+				}
+			}
+			p {
+				font: 12px/1 'arial';
+				color: #999;
+			}
+		}
+	}
+}
