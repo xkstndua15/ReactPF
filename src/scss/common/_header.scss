@@ -1,6 +1,12 @@
 header {
 	width: 100%;
-	background: #111;
+
+	&.main {
+		background: #111;
+	}
+	&.sub {
+		background: #1e1d1c;
+	}
 
 	.inner {
 		width: 1180px;
@@ -28,9 +34,24 @@ header {
 
 				a {
 					display: inline-block;
-					padding: 30px 30px;
+					padding: 20px 30px;
 					font: bold 14px/1 'arial';
-					color: #fff;
+					color: #999;
+
+					&::after {
+						content: '';
+						display: block;
+						width: 0%;
+						height: 1px;
+						background: #fff;
+						transition: 0.5s;
+						margin-top: 10px;
+					}
+					&:hover {
+						&::after {
+							width: 100%;
+						}
+					}
 				}
 			}
 		}
