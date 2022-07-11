@@ -1,0 +1,38 @@
+header {
+	width: 100%;
+	background: #111;
+
+	.inner {
+		width: 1180px;
+		height: 80px;
+		margin: 0 auto;
+		position: relative;
+
+		h1 {
+			position: absolute;
+			bottom: 20px;
+			left: 0px;
+
+			a {
+				font: bold 26px/1 'arial';
+				color: #fff;
+			}
+		}
+		#gnb {
+			position: absolute;
+			bottom: 0px;
+			left: 10vw;
+
+			li {
+				float: left;
+
+				a {
+					display: inline-block;
+					padding: 30px 30px;
+					font: bold 14px/1 'arial';
+					color: #fff;
+				}
+			}
+		}
+	}
+}

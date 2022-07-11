@@ -1,0 +1,29 @@
+{
+  "members": [
+    {
+      "name": "Boss",
+      "position": "CEO",
+      "pic": "boss.jpg"
+    },
+    {
+      "name": "Andy",
+      "position": "Manager",
+      "pic": "member1.jpg"
+    },
+    {
+      "name": "Jane",
+      "position": "Designer",
+      "pic": "member2.jpg"
+    },
+    {
+      "name": "Paul",
+      "position": "Engineer",
+      "pic": "member3.jpg"
+    },
+    {
+      "name": "Tina",
+      "position": "Marketer",
+      "pic": "member4.jpg"
+    }
+  ]
+}

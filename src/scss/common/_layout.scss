@@ -1,0 +1,19 @@
+.content {
+	> .inner {
+		width: 1180px;
+		min-height: 400px;
+		margin: 80px auto 150px;
+		position: relative;
+
+		h1 {
+			font: normal 60px/1 'arial';
+			color: #eee;
+			float: right;
+		}
+		> p {
+			font: normal 20px/1.6 'arial';
+			color: #aaa;
+			width: 45%;
+		}
+	}
+}
