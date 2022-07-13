@@ -15,14 +15,11 @@ function Department() {
 
 	return (
 		<>
-			<Layout name={'Department'} desc={desc}>
+			<Layout
+				name={'Department'}
+				desc={desc}
+				visual={`${path}/img/sub/department/visual.png`}>
 				<div className='main'>
-					<div className='visual'>
-						<img
-							src={`${path}/img/sub/department/visual.png`}
-							alt='조직도 사람들이 모여있는 이미지'
-						/>
-					</div>
 					<ul>
 						<li>
 							<h2>1. Strategy</h2>
@@ -48,7 +45,7 @@ function Department() {
 					</ul>
 				</div>
 			</Layout>
-			<div className='background'>
+			<div id='department'>
 				<div className='wrap'>
 					<h3>OUR TEAM</h3>
 					{Members.map((member, idx) => {

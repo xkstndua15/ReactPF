@@ -4,6 +4,9 @@ function Layout(props) {
 			<div className='inner'>
 				<h1>{props.name}</h1>
 				<p>{props.desc}</p>
+				<div className='visual'>
+					<img src={props.visual} alt={props.name} />
+				</div>
 				{props.children}
 			</div>
 		</section>

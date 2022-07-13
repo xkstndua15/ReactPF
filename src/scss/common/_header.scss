@@ -55,5 +55,46 @@ header {
 				}
 			}
 		}
+		.fa-bars {
+			position: absolute;
+			bottom: 25px;
+			right: 50px;
+			font-size: 25px;
+			color: #ccc;
+			display: none;
+		}
+	}
+}
+
+@media screen and (max-width: $tablet) {
+	header {
+		.inner {
+			width: 100%;
+
+			h1 {
+				left: 50px;
+			}
+			#gnb {
+				display: none;
+			}
+			.fa-bars {
+				display: block;
+			}
+		}
+	}
+}
+
+@media screen and (max-width: $mobile) {
+	header {
+		.inner {
+			width: 100%;
+
+			h1 {
+				left: 20px;
+			}
+			.fa-bars {
+				right: 20px;
+			}
+		}
 	}
 }
