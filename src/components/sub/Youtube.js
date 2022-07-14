@@ -31,22 +31,20 @@ function Youtube() {
 	}, []);
 
 	useEffect(() => {
-		if (!caption || !vids == null) {
-			return;
-		} else {
-			console.log(caption);
-			console.log(vids);
-
-			for (const cap of caption.current.children) {
-				cap.classList.remove('on');
-			}
-			caption.current.children[Index].classList.add('on');
-
-			for (const vid of vids.current.children) {
-				vid.classList.remove('on');
-			}
-			vids.current.children[Index].classList.add('on');
+		for (const cap of caption.current.children) {
+			cap.classList.remove('on');
 		}
+		caption.current.children[Index].classList.add('on');
+
+		for (const vid of vids.current.children) {
+			vid.classList.remove('on');
+
+			if (vid == vids.current.children[Index]) {
+				console.log(vid);
+				vid.classList.add('on');
+			}
+		}
+		//vids.current.children[Index].classList.add('on');
 	}, [Index]);
 
 	const captionList = [
@@ -84,12 +82,7 @@ function Youtube() {
 						return (
 							<li key={idx}>
 								<h3>{caption.name}</h3>
-								<button
-									onClick={() => {
-										setIndex(idx);
-									}}>
-									{caption.icon}
-								</button>
+								<button onClick={() => setIndex(idx)}>{caption.icon}</button>
 							</li>
 						);
 					})}
