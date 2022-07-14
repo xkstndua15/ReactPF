@@ -54,32 +54,39 @@
 
 		article {
 			width: 100%;
+			padding: 20px 0px;
 			display: flex;
 			justify-content: space-between;
 			display: none;
 
 			.txt {
+				padding: 30px;
 				width: 40%;
-				padding: 20px;
+				border: 1px solid #777;
+				border-right: none;
 
 				h4 {
+					display: block;
+					height: 25%;
 					font: 24px/1 'arial';
 					color: #aaa;
-					margin-bottom: 30px;
 				}
 				p {
+					display: block;
+					height: 65%;
 					font: 14px/1.5 'arial';
 					color: #777;
-					margin-bottom: 160px;
 				}
 				span {
-					font: 12px/1 'arial';
+					display: block;
+					height: 10%;
+					font: 12px/30px 'arial';
 					color: #fff;
 				}
 			}
 			.pic {
 				width: 60%;
-				height: 400px;
+				height: 350px;
 
 				img {
 					width: 100%;

@@ -90,20 +90,21 @@ function Youtube() {
 
 				<ul className='vids' ref={vids}>
 					{Vids.map((vid, idx) => {
-						const titLen = 30;
-						const descLen = 50;
+						const titLen = 50;
+						const descLen = 200;
 						const tit =
 							vid.snippet.title.length > titLen
-								? vid.snippet.title.substr(titLen) + '...'
+								? vid.snippet.title.substr(0, titLen) + '...'
 								: vid.snippet.title;
 						const desc =
 							vid.snippet.description.length > descLen
-								? vid.snippet.description.substr(descLen) + '...'
+								? vid.snippet.description.substr(0, descLen) + '...'
 								: vid.snippet.description;
 						const date = vid.snippet.publishedAt;
+						const name = idx == 0 ? 'on' : '';
 
 						return (
-							<article key={idx}>
+							<article key={idx} className={name}>
 								<div className='txt'>
 									<h4>{tit}</h4>
 									<p>{desc}</p>
