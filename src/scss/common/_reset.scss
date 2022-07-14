@@ -13,3 +13,8 @@ li {
 a {
 	text-decoration: none;
 }
+.hidden {
+	position: absolute;
+	top: -99999px;
+	opacity: 0;
+}

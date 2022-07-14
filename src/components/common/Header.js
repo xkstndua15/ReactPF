@@ -37,7 +37,7 @@ function Header(props) {
 						</NavLink>
 					</li>
 					<li>
-						<NavLink to='/membership' activeStyle={color}>
+						<NavLink to='/members' activeStyle={color}>
 							Membership
 						</NavLink>
 					</li>
