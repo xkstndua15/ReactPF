@@ -39,7 +39,7 @@ function Youtube() {
 		for (const vid of vids.current.children) {
 			vid.classList.remove('on');
 
-			if (vid == vids.current.children[Index]) {
+			if (vid === vids.current.children[Index]) {
 				console.log(vid);
 				vid.classList.add('on');
 			}
@@ -101,7 +101,7 @@ function Youtube() {
 								? vid.snippet.description.substr(0, descLen) + '...'
 								: vid.snippet.description;
 						const date = vid.snippet.publishedAt;
-						const name = idx == 0 ? 'on' : '';
+						const name = idx === 0 ? 'on' : '';
 
 						return (
 							<article key={idx} className={name}>
