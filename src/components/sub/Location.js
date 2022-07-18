@@ -29,7 +29,7 @@ function Location() {
 
 	const path = process.env.PUBLIC_URL;
 	const desc =
-		'Lorem ipsum dolor sit amet consectetur adipisicing elit. Vel quam voluptate pariatur id mollitia, maxime nam aperiam enim. Ipsa quae commodi ipsum soluta cumque corporis minus ad, a itaque animi?';
+		'Lorem ipsum dolor sit amet consectetur adipisicing elit. Vel quam voluptate pariatur id mollitia, maxime nam aperiam enim. Ipsa quae commodi ipsum soluta.';
 
 	const [Traffic, setTraffic] = useState(false);
 	const trafficBtn = useRef(null);

@@ -1,6 +1,7 @@
 #youtube {
 	width: 1180px;
 	margin: 0 auto;
+	padding: 80px 0px;
 	position: relative;
 
 	ul {
@@ -11,69 +12,78 @@
 		}
 	}
 
+	h3 {
+		font: bold 50px/1 'roboto';
+		color: #ccc;
+		margin-bottom: 30px;
+		text-align: center;
+	}
+
 	.list {
-		padding: 30px 0px;
-		margin-bottom: 50px;
+		margin-top: 30px;
+		width: 100%;
+		display: flex;
+		justify-content: space-between;
 
 		> li {
-			width: 18%;
-			margin-right: 2.5%;
-			float: left;
+			border: 1px solid #777;
+			padding: 30px 7% 0px;
+			cursor: pointer;
 
-			&:last-of-type {
-				margin-right: 0%;
+			&:nth-of-type(2n) {
+				border-left: none;
+				border-right: none;
+			}
+			&:hover {
+				background: #fff;
+
+				h3 {
+					color: #111;
+				}
 			}
 
 			> h3 {
 				font: 25px/1 'arial';
-				color: #777;
+				color: #aaa;
 				text-align: center;
-				margin-bottom: 10px;
-			}
-			> button {
-				width: 100%;
-				padding: 5px 30px;
-				font-size: 24px;
-				background: #333;
-				border: none;
-				color: #fff;
-				cursor: pointer;
 			}
 
 			&.on {
-				button {
-					background: #fff;
-					color: #333;
+				background: #fff;
+
+				h3 {
+					color: #111;
 				}
 			}
 		}
 	}
 
 	.vids {
-		padding: 50px 0px;
+		margin-bottom: 50px;
 
 		article {
 			width: 100%;
-			padding: 20px 0px;
 			display: flex;
 			justify-content: space-between;
-			display: none;
+			position: relative;
+			cursor: pointer;
 
 			.txt {
 				padding: 30px;
-				width: 40%;
+				width: 39%;
 				border: 1px solid #777;
+				border-top: none;
 				border-right: none;
 
 				h4 {
 					display: block;
-					height: 25%;
+					height: 40%;
 					font: 24px/1 'arial';
 					color: #aaa;
 				}
 				p {
 					display: block;
-					height: 65%;
+					height: 50%;
 					font: 14px/1.5 'arial';
 					color: #777;
 				}
@@ -81,11 +91,11 @@
 					display: block;
 					height: 10%;
 					font: 12px/30px 'arial';
-					color: #fff;
+					color: #ccc;
 				}
 			}
 			.pic {
-				width: 60%;
+				width: 61%;
 				height: 350px;
 
 				img {
@@ -95,8 +105,26 @@
 				}
 			}
 
-			&.on {
+			.play {
+				width: 0%;
+				height: 100%;
+				position: absolute;
 				display: flex;
+				justify-content: center;
+				align-items: center;
+				left: 39%;
+				font-size: 100px;
+				color: #ccc;
+				background: rgba(0, 0, 0, 0.8);
+				opacity: 0;
+				transition: 0.5s;
+			}
+
+			&:hover {
+				.play {
+					width: 61.1%;
+					opacity: 1;
+				}
 			}
 		}
 	}

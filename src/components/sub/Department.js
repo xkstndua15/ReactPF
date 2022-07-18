@@ -6,7 +6,7 @@ function Department() {
 	const path = process.env.PUBLIC_URL;
 	const [Members, setMembers] = useState([]);
 	const desc =
-		'Lorem ipsum dolor sit, amet consectetur adipisicing elit. Nulla iure nostrum quisquam minima dolores animi?';
+		'Lorem ipsum dolor sit, amet consectetur adipisicing elit. Nulla iure nostrum quisquam minima dolores animi? Lorem ipsum dolor sit, amet consectetur adipisicing elit. Nulla iure nostrum quisquam minima dolores animi?';
 	useEffect(() => {
 		axios.get(`${path}/DB/members.json`).then((json) => {
 			setMembers(json.data.members);
@@ -47,7 +47,7 @@ function Department() {
 			</Layout>
 			<div id='department'>
 				<div className='wrap'>
-					<h3>OUR TEAM</h3>
+					<h3>Our Team</h3>
 					{Members.map((member, idx) => {
 						return (
 							<article key={idx}>
