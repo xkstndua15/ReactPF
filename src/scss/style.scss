@@ -11,8 +11,10 @@ $mobile: 539px;
 @import './common/popup';
 @import './common/menu';
 // main
-@import './main/content';
-@import './main/visual';
+@import './main/vids';
+@import './main/pics';
+@import './main/news';
+@import './main/info';
 // sub
 @import './sub/department';
 @import './sub/community';
