@@ -20,6 +20,7 @@
 		float: left;
 		position: relative;
 		margin-bottom: 60px;
+		transition: 0.5s;
 
 		&:nth-of-type(4n),
 		&:last-of-type {
@@ -56,6 +57,7 @@
 				width: 100%;
 				height: 300px;
 				padding: 0px 10%;
+				cursor: pointer;
 
 				img {
 					width: 100%;
@@ -89,6 +91,85 @@
 		&:hover {
 			background: #fff;
 			color: #111;
+		}
+		&.off {
+			display: none;
+		}
+	}
+}
+
+@media screen and (max-width: $tablet) {
+	#gallery {
+		width: 100%;
+
+		h3 {
+			margin-left: 30px;
+		}
+
+		article {
+			width: calc(100% / 3);
+
+			&:nth-of-type(3n),
+			&:last-of-type {
+				&::before {
+					display: none;
+				}
+			}
+
+			&:nth-of-type(4n),
+			&:last-of-type {
+				&::before {
+					display: block;
+				}
+			}
+		}
+	}
+}
+
+@media screen and (max-width: $mobile) {
+	#gallery {
+		h3 {
+			font: bold 40px/1 'roboto';
+		}
+		article {
+			width: 50%;
+
+			&:nth-of-type(3n),
+			&:last-of-type {
+				&::before {
+					display: block;
+				}
+			}
+			&:nth-of-type(2n),
+			&:last-of-type {
+				&::before {
+					display: none;
+				}
+			}
+
+			.inner {
+				width: 100%;
+				height: 100%;
+
+				.pic {
+					width: 100%;
+					height: 300px;
+					padding: 0px 10%;
+					cursor: pointer;
+
+					img {
+						width: 100%;
+						height: 100%;
+						object-fit: cover;
+					}
+				}
+				h4 {
+					font: 25px/1 'roboto';
+					color: #777;
+					text-align: center;
+					margin-top: 20px;
+				}
+			}
 		}
 	}
 }

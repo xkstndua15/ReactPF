@@ -1,7 +1,7 @@
 import Layout from '../common/Layout';
 import { useState, useEffect, useRef } from 'react';
 import axios from 'axios';
-import Masonry from 'react-masonry-component';
+import Popup from '../common/Popup';
 
 function Gallery() {
 	const desc =
@@ -10,9 +10,11 @@ function Gallery() {
 
 	const frame = useRef(null);
 	const btn = useRef(null);
+	const pop = useRef(null);
 
 	const [Num, setNum] = useState(10);
 	const [Items, setItems] = useState([]);
+	const [Index, setIndex] = useState(0);
 
 	const getFlickr = async () => {
 		const key = 'b74012b5c1b79c7c3bc8c8e61f3b23f0';
@@ -31,7 +33,7 @@ function Gallery() {
 		setNum(Num * 2);
 
 		if (Num * 2 >= 20) {
-			btn.current.classList.add('hidden');
+			btn.current.classList.add('off');
 			console.log(btn.current.classList);
 		}
 	};
@@ -57,6 +59,10 @@ function Gallery() {
 										<img
 											src={`https://live.staticflickr.com/${item.server}/${item.id}_${item.secret}_m.jpg`}
 											alt={item.title}
+											onClick={() => {
+												setIndex(idx);
+												pop.current.open();
+											}}
 										/>
 									</div>
 									<h4>{item.title}</h4>
@@ -72,6 +78,14 @@ function Gallery() {
 					View more
 				</button>
 			</div>
+			<Popup ref={pop}>
+				{Items.length !== 0 && (
+					<img
+						src={`https://live.staticflickr.com/${Items[Index].server}/${Items[Index].id}_${Items[Index].secret}_b.jpg`}
+						alt={Items[Index].title}
+					/>
+				)}
+			</Popup>
 		</>
 	);
 }

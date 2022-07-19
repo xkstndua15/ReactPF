@@ -3,60 +3,90 @@
 	margin: 0 auto;
 	padding: 50px 0px;
 
+	h3 {
+		font: bold 50px/1 'roboto';
+		color: #ccc;
+		margin-bottom: 30px;
+	}
 	form {
 		fieldset {
 			border: none;
 
 			table {
-				width: 80%;
+				width: 100%;
 				margin: 0 auto;
 				border: none;
-				border-top: 2px solid #777;
-				border-bottom: 2px solid #777;
+				border: 1px solid #777;
+				padding: 30px;
+				border-radius: 5px;
 
 				tbody {
 					tr {
+						display: flex;
+						flex-wrap: wrap;
+						margin-bottom: 20px;
+
 						th {
-							width: 25%;
+							width: 100%;
 							border: none;
-							border-bottom: 1px solid #777;
-							font: 16px/1 'arial';
+							font: 20px/1 'arial';
 							color: #aaa;
-							padding: 15px 30px;
+							text-align: left;
+							margin-bottom: 10px;
 
 							&:last-child {
 								border-bottom: none;
 							}
 
 							label {
-								font: 16px/1 'arial';
+								font: 24px/1 'arial';
 								color: #aaa;
 							}
+
 							input[type='reset'],
 							input[type='submit'] {
-								border: 1px solid #777;
-								width: 150px;
-								height: 30px;
+								font: 20px/1 'open sans';
+								color: #111;
+								border: none;
+								width: 200px;
+								height: 40px;
 								display: inline-flex;
 								justify-content: center;
 								align-items: center;
-								margin: 0px 20px;
+								margin-top: 30px;
 								cursor: pointer;
+								margin-left: 300px;
+								transition: 0.5s;
+
+								&:last-child {
+									margin-left: 100px;
+								}
+								&:hover {
+									background: #111;
+									color: #fff;
+								}
 							}
 						}
 						td {
 							border: none;
-							border-left: 1px solid #777;
-							border-bottom: 1px solid #777;
-							padding: 10px 40px;
+							width: 100%;
+
+							span {
+								font: 12px/1.5 'open sans';
+								color: orange;
+							}
 
 							input[type='text'],
 							input[type='password'],
 							textarea {
-								width: 60%;
+								width: 100%;
 								border: 1px solid #777;
-								padding: 6px 10px;
+								padding: 15px 10px;
 								resize: none;
+								margin-right: 20px;
+								background: transparent;
+								color: #fff;
+								margin-bottom: 5px;
 							}
 
 							label {
@@ -67,6 +97,140 @@
 							input[type='radio'],
 							input[type='checkbox'] {
 								margin-right: 20px;
+								accent-color: red;
+							}
+						}
+					}
+				}
+			}
+		}
+	}
+}
+
+@media screen and (max-width: $tablet) {
+	#members {
+		width: 100%;
+		padding: 50px 30px;
+
+		h3 {
+			font: bold 50px/1 'roboto';
+			color: #ccc;
+			margin-bottom: 30px;
+		}
+		form {
+			fieldset {
+				border: none;
+
+				table {
+					padding: 20px;
+					table-layout: fixed;
+
+					tbody {
+						width: 100%;
+
+						tr {
+							th {
+								input[type='reset'],
+								input[type='submit'] {
+									font: 16px/1 'open sans';
+									width: 150px;
+									height: 35px;
+									margin-top: 30px;
+									cursor: pointer;
+									margin-left: 60px;
+
+									&:last-child {
+										margin-left: 20px;
+									}
+								}
+							}
+							td {
+								border: none;
+								width: 100%;
+
+								span {
+									font: 10px/1.5 'open sans';
+									color: orange;
+								}
+
+								input[type='text'],
+								input[type='password'],
+								textarea {
+									width: 100%;
+									border: 1px solid #777;
+									padding: 15px 10px;
+									resize: none;
+									margin-right: 20px;
+									background: transparent;
+									color: #fff;
+									margin-bottom: 5px;
+								}
+
+								label {
+									margin-right: 6px;
+									font: 12px/1 'arial';
+									color: #aaa;
+								}
+								input[type='radio'],
+								input[type='checkbox'] {
+									margin-right: 20px;
+									accent-color: red;
+								}
+							}
+						}
+					}
+				}
+			}
+		}
+	}
+}
+
+@media screen and (max-width: $tablet) {
+	#members {
+		h3 {
+			font: bold 40px/1 'roboto';
+		}
+		form {
+			fieldset {
+				table {
+					tbody {
+						tr {
+							th {
+								input[type='reset'],
+								input[type='submit'] {
+									font: 12px/1 'open sans';
+									width: 48%;
+									height: 30px;
+									margin: 0px;
+									margin-right: 2%;
+
+									&:last-child {
+										margin-left: 0;
+									}
+								}
+
+								label {
+									font: 16px/1 'arial';
+									color: #aaa;
+								}
+							}
+							td {
+								span {
+									font: 10px/1.5 'open sans';
+									color: orange;
+								}
+
+								input[type='text'],
+								input[type='password'],
+								textarea {
+									padding: 10px;
+									font: 12px/1 'open sans';
+								}
+								input[type='radio'],
+								input[type='checkbox'] {
+									margin-right: 10px;
+									accent-color: red;
+								}
 							}
 						}
 					}

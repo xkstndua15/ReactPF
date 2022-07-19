@@ -6,12 +6,50 @@ function Community() {
 		'Lorem ipsum dolor sit, amet consectetur adipisicing elit. Consequatur nulla eos quisquam mollitia voluptatibus quasi quaerat. Quasi a rerum inventore quo laudantium aspernatur nisi, assumenda dolorum nulla unde facilis reprehenderit.';
 	const path = process.env.PUBLIC_URL;
 
-	const [Posts, setPosts] = useState([]);
-
 	const input = useRef(null);
 	const textarea = useRef(null);
 	const inputEdit = useRef(null);
 	const textareaEdit = useRef(null);
+
+	const getLocalData = () => {
+		const dummyPosts = [
+			{
+				title: 'Hello5',
+				content: 'Here comes description  in detail.',
+				date: 'Tue June 23 2022 03:09:32',
+			},
+			{
+				title: 'Hello4',
+				content: 'Here comes description  in detail.',
+				date: 'Tue Jul 19 2021 12:09:59',
+			},
+			{
+				title: 'Hello3',
+				content: 'Here comes description  in detail.',
+				date: 'Sat Sep 19 2022 10:09:47',
+			},
+			{
+				title: 'Hello2',
+				content: 'Here comes description  in detail.',
+				date: 'Mon Jul 20 2022 08:19:39',
+			},
+			{
+				title: 'Hello1',
+				content: 'Here comes description  in detail.',
+				date: 'Sun Jul 19 2022 16:09:39',
+			},
+		];
+		const data = localStorage.getItem('post');
+
+		if (data) {
+			return JSON.parse(data);
+		} else {
+			return dummyPosts;
+		}
+	};
+
+	const [Posts, setPosts] = useState(getLocalData());
+	const [Allowed, setAllowed] = useState(true);
 
 	const resetInput = (index) => {
 		input.current.value = '';
@@ -41,6 +79,10 @@ function Community() {
 	};
 
 	const enableEditPost = (index) => {
+		if (!Allowed) return;
+
+		setAllowed(false);
+
 		setPosts(
 			Posts.map((post, idx) => {
 				if (idx === index) post.enableEditPost = true;
@@ -51,6 +93,7 @@ function Community() {
 	};
 	const cancleEdit = (index) => {
 		resetInput(index);
+		setAllowed(true);
 
 		setPosts(
 			Posts.map((post, idx) => {
@@ -67,6 +110,8 @@ function Community() {
 			return alert('제목과 본문을 입력해 주세요');
 		}
 
+		setAllowed(true);
+
 		setPosts(
 			Posts.map((post, idx) => {
 				if (idx === index) {
@@ -82,6 +127,10 @@ function Community() {
 	const deletePost = (index) => {
 		setPosts(Posts.filter((_, idx) => idx !== index));
 	};
+
+	useEffect(() => {
+		localStorage.setItem('post', JSON.stringify(Posts));
+	}, []);
 
 	return (
 		<>
