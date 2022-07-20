@@ -1,0 +1,53 @@
+#news {
+	width: 100%;
+	height: 50vh;
+	background: #111;
+
+	.inner {
+		width: 1180px;
+		margin: 0 auto;
+
+		video {
+			width: 100%;
+			height: 500px;
+			background: #333;
+			margin-top: -22%;
+			margin-bottom: 3%;
+		}
+
+		.wrap {
+			width: 100%;
+
+			&::after {
+				content: '';
+				display: block;
+				clear: both;
+			}
+
+			ul {
+				width: 100%;
+
+				li {
+					float: left;
+					width: 32%;
+					margin-right: 2%;
+					padding: 20px;
+
+					&:last-child {
+						margin-right: 0%;
+					}
+
+					h3 {
+						font: bold 24px/1 'roboto';
+						color: #aaa;
+						margin-bottom: 20px;
+					}
+					p {
+						font: 16px/1 'open sans';
+						color: #777;
+					}
+				}
+			}
+		}
+	}
+}
