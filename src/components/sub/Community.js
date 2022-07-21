@@ -132,6 +132,10 @@ function Community() {
 		localStorage.setItem('post', JSON.stringify(Posts));
 	}, []);
 
+	useEffect(() => {
+		localStorage.setItem('post', JSON.stringify(Posts));
+	}, [Posts]);
+
 	return (
 		<>
 			<Layout

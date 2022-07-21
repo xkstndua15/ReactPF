@@ -1,4 +1,8 @@
+import { useSelector } from 'react-redux';
+
 function Vids() {
+	const vids = useSelector((store) => store.youtubeReducer.youtube);
+
 	return (
 		<section id='vids'>
 			<div className='inner'>
@@ -19,11 +23,16 @@ function Vids() {
 						<button>Get Started</button>
 					</div>
 					<div className='vidsArea'>
-						<article>dd</article>
-						<article>dd</article>
-						<article>dd</article>
-						<article>dd</article>
-						<article>dd</article>
+						{vids.map((vid, idx) => {
+							return (
+								<article key={idx}>
+									<img
+										src={vid.snippet.thumbnails.high.url}
+										alt={vid.snippet.title}
+									/>
+								</article>
+							);
+						})}
 					</div>
 				</div>
 			</div>

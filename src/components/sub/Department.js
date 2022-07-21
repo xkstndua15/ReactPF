@@ -1,17 +1,12 @@
 import Layout from '../common/Layout';
-import axios from 'axios';
-import { useEffect, useState } from 'react';
+import { useSelector } from 'react-redux';
 
 function Department() {
 	const path = process.env.PUBLIC_URL;
-	const [Members, setMembers] = useState([]);
 	const desc =
 		'Lorem ipsum dolor sit, amet consectetur adipisicing elit. Nulla iure nostrum quisquam minima dolores animi? Lorem ipsum dolor sit, amet consectetur adipisicing elit. Nulla iure nostrum quisquam minima dolores animi?';
-	useEffect(() => {
-		axios.get(`${path}/DB/members.json`).then((json) => {
-			setMembers(json.data.members);
-		});
-	}, []);
+
+	const members = useSelector((store) => store.memberReducer.members);
 
 	return (
 		<>
@@ -48,7 +43,7 @@ function Department() {
 			<div id='department'>
 				<div className='wrap'>
 					<h3>Our Team</h3>
-					{Members.map((member, idx) => {
+					{members.map((member, idx) => {
 						return (
 							<article key={idx}>
 								<div className='inner'>
